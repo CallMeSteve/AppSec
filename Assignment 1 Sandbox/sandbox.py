@@ -6,6 +6,8 @@ Professor Justin Cappos
 Main sandbox file for Linux.
 Whitelist approach
 """
+#!/usr/bin/python
+# -*- coding: ascii -*-
 from sys import argv
 import resource
 
