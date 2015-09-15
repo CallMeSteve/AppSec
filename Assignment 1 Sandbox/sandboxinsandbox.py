@@ -9,7 +9,7 @@ Professor Justin Cappos
 NOT_SAFE = ['import','os','subprocess','sys','exec','eval','_','.','subclasses','bases','NOT_SAFE']
 
 while True:
-	print ">> ",
+	print ">>> ",
 	inp = raw_input()
 	
 	for untrusted in NOT_SAFE:
