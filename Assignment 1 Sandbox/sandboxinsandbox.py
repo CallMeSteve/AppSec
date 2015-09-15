@@ -19,5 +19,5 @@ while True:
 	try:
 		exec inp
 	
-	except ImportError, NameError, IOError:
+	except ImportError, NameError:
 		print "ONLY USE SAFE FUNCTIONS"
