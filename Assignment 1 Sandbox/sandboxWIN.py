@@ -1,3 +1,11 @@
+"""
+Abdullah Sarwar
+CS-UY 4753
+Professor Justin Cappos
+
+Main sandbox file for Windows.
+"""
+
 from sys import argv
 
 num_arg = len(argv)
