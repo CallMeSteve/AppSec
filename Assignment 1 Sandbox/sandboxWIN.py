@@ -15,7 +15,6 @@ safe.remove('True')
 safe.remove('raw_input')
 safe.remove('range')
 safe.remove('str')
-safe
 
 for not_safe in safe:
 	del __builtins__.__dict__[not_safe]
