@@ -1,3 +1,10 @@
+"""
+Abdullah Sarwar
+CS-UY 4753
+Professor Justin Cappos
+
+Main sandbox file for Linux.
+"""
 from sys import argv
 import resource
 
