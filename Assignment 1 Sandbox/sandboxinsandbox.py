@@ -4,6 +4,7 @@ CS-UY 4753
 Professor Justin Cappos
 
 "Sanbox in a sandbox" to pass to sandbox.py
+blacklist approach
 """
 
 NOT_SAFE = ['import','os','subprocess','sys','exec','eval','_','.','subclasses','bases','NOT_SAFE']
