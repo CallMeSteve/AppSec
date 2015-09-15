@@ -4,6 +4,7 @@ CS-UY 4753
 Professor Justin Cappos
 
 Main sandbox file for Linux.
+Whitelist approach
 """
 from sys import argv
 import resource
