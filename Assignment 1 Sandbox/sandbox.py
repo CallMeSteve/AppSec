@@ -1,27 +1,20 @@
+#!/usr/bin/python
+# -*- coding: ascii -*
+
 """
 Abdullah Sarwar
 CS-UY 4753
 Professor Justin Cappos
-
 Main sandbox file for Linux.
-Whitelist approach
+Whitelist approach #2
+
+New:
+	- Removed arbritrary memory limit
+	- Added RuntimeError exception handling
 """
-#!/usr/bin/python
-# -*- coding: ascii -*-
+
 from sys import argv
 import resource
-
-#Max virtual memory space
-resource.setrlimit(resource.RLIMIT_AS, (128 * 1024, 128 * 1024))
-#Max process' data segment
-resource.setrlimit(resource.RLIMIT_DATA, (128 * 1024, 128 * 1024))
-#File descriptor limit
-#RLIMIT_OFILE
-resource.setrlimit(resource.RLIMIT_NOFILE, (4, 4))
-#Max threads
-resource.setrlimit(resource.RLIMIT_NPROC, (1, 1))
-#Max process stack
-resource.setrlimit(resource.RLIMIT_STACK, (128 * 1024, 128 * 1024))
 
 num_arg = len(argv)
 
@@ -38,6 +31,9 @@ safe.remove('True')
 safe.remove('raw_input')
 safe.remove('range')
 safe.remove('str')
+safe.remove('RuntimeError')
+safe.remove('reload')
+safe.remove('SystemExit')
 
 for not_safe in safe:
 	del __builtins__.__dict__[not_safe]
@@ -53,10 +49,13 @@ filename = argv[1]
 try:
 	oFile = open(filename, 'r')
 except IOError:
-	print "Not A Valid File"
+	print "Not A Valid File, try again!"
 	exit(2)
 
-#no exceptions
-exec oFile
+try:
+	exec oFile
+except RuntimeError:
+	print "Runtime Error, try again!"
+	exit(3)
 
 oFile.close()
