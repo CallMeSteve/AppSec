@@ -11,6 +11,7 @@ Whitelist approach #2
 New:
 	- Removed arbritrary memory limit
 	- Added RuntimeError exception handling
+	- Added SystemExit to Whitelist
 """
 
 from sys import argv
